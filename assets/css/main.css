@@ -1,0 +1,389 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- White: hsl(0, 0%, 100%)
+- Black: hsl(0, 0%, 0%)
+- Dark Gray: hsl(0, 0%, 55%)
+- Very Dark Gray: hsl(0, 0%, 41%)
+
+### Neutral
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Fonts
+
+- Family: [Alata](https://fonts.google.com/specimen/Alata)
+- Weight: 400
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weight: 300
+
+## Icons
+
+We provide the required social icons. But, if you prefer, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-gray: hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+}
+
+a:hover {
+    color: #31B0A6 !important;
+}
+
+button:hover {
+    color: var(--white);
+    background-color: #31B0A6;
+    border: none;
+}
+
+.inicio {
+    background-image: url(../../images/desktop/image-hero.jpg);
+    height: 600px;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 0 150px;
+    transition: padding 3s;
+}
+
+.nav__enlaces a {
+    margin-right: 20px;
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Alata', sans-serif;
+    font-weight: bold;
+}
+
+#menu__btn {
+    display: none;
+}
+
+.inicio__slogan {
+    color: var(--white);
+    width: 650px;
+    min-height: 45%;
+    margin-left: 150px;
+    margin-top: 120px;
+    border: 3px solid var(--white);
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    padding: 30px;
+}
+
+@media (max-width: 640px) {
+    .nav__enlaces_active {
+        height: 40% !important;
+        transition: .5s;
+    }
+
+    .nav__enlaces {
+        background-color: #6F34C2;
+        position: fixed;
+        height: 0;
+        top: 10%;
+        z-index: 20;
+        width: 250px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: height .5s;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    #menu__btn {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        z-index: 20;
+        display: block;
+    }
+
+    .inicio__slogan {
+        width: 80% !important;
+        min-height: 30%;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 920px) {
+    .navegacion {
+        padding: 20px;
+        transition: padding 2s;
+    }
+
+    .inicio__slogan {
+        margin: 120px auto;
+        width: 600px;
+    }
+}
+
+.sobre__nosotros_contenedor {
+    width: 90%;
+    margin: 100px auto;
+}
+
+.sobre__nosotros__info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.info__texto {
+    min-height: 300px;
+    background-color: var(--white);
+    width: 550px;
+    transform: translate(570px, -300px);
+    padding: 90px 50px;
+}
+
+.info__texto h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1280px) {
+    .info__imagen img {
+        width: 100%;
+    }
+
+    .info__texto {
+        width: 100%;
+        transform: translate(0);
+        padding: 90px 0;
+        text-align: center;
+    }
+
+    .info__texto h1 {
+        font-size: 2rem;
+    }
+}
+
+.info__texto p {
+    color: var(--dark-gray);
+    font-family: 'Alata', sans-serif;
+}
+
+.creaciones__titulo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.creaciones__titulo h1 {
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.creaciones__btn1, .creaciones__btn2 {
+    background-color: inherit;
+    border: 1px solid var(--black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+}
+
+.creaciones__btn2 {
+    display: none;
+}
+
+.creaciones__contenedor {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.creaciones__item {
+    flex-basis: 250px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 30px;
+    background-size: cover;
+
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--white);
+}
+
+
+@media (max-width: 600px) {
+    .creaciones__btn1 {
+        display: none;
+    }
+
+    .creaciones__titulo {
+        justify-content: center;
+    }
+    
+    .creaciones__titulo h1 {
+        font-size: 2rem;
+    }
+
+    .creaciones__btn2 {
+        display: block;
+        margin-top: 20px;
+        float: right;
+    }
+
+    .creaciones__item {
+        height: 200px;
+    }
+}
+
+
+.creaciones__item:first-child {
+    background-image: url(../../images/desktop/image-deep-earth.jpg);
+}
+
+.creaciones__item:nth-child(2) {
+    background-image: url(../../images/desktop/image-night-arcade.jpg);
+}
+
+.creaciones__item:nth-child(3) {
+    background-image: url(../../images/desktop/image-soccer-team.jpg);
+}
+
+.creaciones__item:nth-child(4) {
+    background-image: url(../../images/desktop/image-grid.jpg);
+}
+
+.creaciones__item:nth-child(5) {
+    background-image: url(../../images/desktop/image-from-above.jpg);
+}
+
+.creaciones__item:nth-child(6) {
+    background-image: url(../../images/desktop/image-pocket-borealis.jpg);
+}
+
+.creaciones__item:nth-child(7) {
+    background-image: url(../../images/desktop/image-curiosity.jpg);
+}
+
+.creaciones__item:last-child {
+    background-image: url(../../images/desktop/image-fisheye.jpg);
+}
+
+footer {
+    background-color: var(--black);
+    min-height: 200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 150px;
+    flex-wrap: wrap;
+}
+
+.footer__enlaces {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.footer__enlaces_contenedor {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.footer__enlaces_contenedor a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Alata', sans-serif;
+    font-weight: bold;
+}
+
+.footer__redes {
+    flex-grow: 1;
+}
+
+.footer__redes_iconos {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer__redes p {
+    color: var(--very-dark-gray);
+    text-align: end;
+    margin-top: 30px;
+    font-family: 'Alata', sans-serif;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        padding: 50px;
+    }
+
+    .footer__redes {
+        margin-top: 50px;
+    }
+
+    .footer__redes_iconos, .footer__enlaces_contenedor {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer__enlaces_imagen, .footer__redes p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer__enlaces_contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+}
